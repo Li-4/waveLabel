@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>925</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="tab_0">
+       <attribute name="title">
+        <string>文件和查看</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButton_openFile">
+            <property name="text">
+             <string>打开文件</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="pushButton_saveFile">
+            <property name="text">
+             <string>保存文件</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableView" name="tableView"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_1">
+       <attribute name="title">
+        <string>计算和标记</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QFrame" name="frame">
+          <property name="frameShape">
+           <enum>QFrame::Shape::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="3">
+              <widget class="QLineEdit" name="lineEdit_waveSpeed">
+               <property name="text">
+                <string>165</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_0">
+               <property name="text">
+                <string>总长 s (单位: m)</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_length</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="QSpinBox" name="spinBox_reflectedWave">
+               <property name="maximum">
+                <number>20000</number>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="label_1">
+               <property name="text">
+                <string>波速 v (单位: m/us)</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_waveSpeed</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="lineEdit_length">
+               <property name="text">
+                <string>1400</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>反射点 b</string>
+               </property>
+               <property name="buddy">
+                <cstring>spinBox_reflectedWave</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>入射点 a</string>
+               </property>
+               <property name="buddy">
+                <cstring>spinBox_incidentWave</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="spinBox_incidentWave">
+               <property name="minimum">
+                <number>0</number>
+               </property>
+               <property name="maximum">
+                <number>20000</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>时间差 Δt (单位: us)</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_timeDifference</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="lineEdit_timeDifference">
+               <property name="text">
+                <string>/</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>故障点距离 (单位: m)</string>
+               </property>
+               <property name="buddy">
+                <cstring>lineEdit_result</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="3">
+              <widget class="QLineEdit" name="lineEdit_result">
+               <property name="text">
+                <string>/</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_0">
+             <item>
+              <widget class="QPushButton" name="pushButton_0">
+               <property name="text">
+                <string>计    算</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_1">
+               <property name="text">
+                <string>写    回</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QmyFigureCanvas" name="widgetChart" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>500</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>帮助和支持</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayout">
+        <property name="labelAlignment">
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>MADE WITH ♥ BY : </string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>&lt;a href = &quot;https://github.com/Li-4&quot;&gt;github/Li-4</string>
+          </property>
+          <property name="openExternalLinks">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>使用步骤 : </string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>0. 请先点击 “打开文件” 选择 CSV 数据文件</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>1. 打开正确的 CSV 文件后，会在下方显示表格，点击每一行的表头确认该行内容</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>2. 点击 “OK” 后会自动跳转至 “计算和标记页” 右方显示波形，波形图支持以鼠标位置为中心缩放</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>3. 波形图上具有两条竖线，其中红色代表入射波起点，蓝色代表反射波启动，鼠标单击会自动选择最近的竖线</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>4. 拖拽竖线可移动位置，停止拖拽后会自动计算结果，点击 “写回” 会跳转至 “文件和查看” 并高亮标记的数据行</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>5. 请务必点击 “保存文件” 及时保存</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="7" column="1">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>6. 请务必点击 “保存文件” 及时保存</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>925</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QmyFigureCanvas</class>
+   <extends>QWidget</extends>
+   <header location="global">myFigureCanvas</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit_length</tabstop>
+  <tabstop>lineEdit_waveSpeed</tabstop>
+  <tabstop>spinBox_incidentWave</tabstop>
+  <tabstop>spinBox_reflectedWave</tabstop>
+  <tabstop>lineEdit_timeDifference</tabstop>
+  <tabstop>lineEdit_result</tabstop>
+  <tabstop>pushButton_0</tabstop>
+  <tabstop>pushButton_1</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

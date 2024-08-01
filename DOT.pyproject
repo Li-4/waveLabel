@@ -1,0 +1,10 @@
+{
+    "files": [
+        "mainwindow.py",
+        "form.ui",
+        "myFigureCanvas.py",
+        "1.npy",
+        "infodialog.ui",
+        "README.md"
+    ]
+}
